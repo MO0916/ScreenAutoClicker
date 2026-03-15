@@ -56,7 +56,7 @@ jobs:
       run: |
         echo "Build completed at $(date)" > build-report.txt
         echo "Python version: $(python --version)" >> build-report.txt
-        echo "EXE size: $(ls -la dist/ScreenAutoClicker.exe | awk '{print $5}')" >> build-report.txt
+        echo "EXE size: $(Get-ChildItem dist/ScreenAutoClicker.exe | Select-Object -ExpandProperty Length)" >> build-report.txt
       
     - name: Upload build report artifact
       uses: actions/upload-artifact@v4
