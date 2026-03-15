@@ -44,7 +44,7 @@ jobs:
       run: |
         dir dist\
         echo "EXE file size:"
-        ls -la dist/ScreenAutoClicker.exe
+        Get-ChildItem dist/ScreenAutoClicker.exe | Select-Object Length
         
     - name: Upload EXE artifact
       uses: actions/upload-artifact@v4
